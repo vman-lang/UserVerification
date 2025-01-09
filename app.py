@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 hog_face_detector = dlib.get_frontal_face_detector()
 dlib_facelandmark = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
-img1 = cv2.imread(r"C:\Users\Varrun\Desktop\Projects\UserVerification\reference.jpg")
+img1 = cv2.imread(r"C:\Users\<user>\Desktop\Projects\UserVerification\reference.jpg")
 
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
