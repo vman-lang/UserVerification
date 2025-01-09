@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Face Recognition</title>
+    <link rel="stylesheet" href="styles.css" />
+    
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(135, 206, 235);
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+h1{
+    
+    font-size: 70px;
+}
+#videoElement {
+    width: 480px;
+    height: 360px;
+    border: none;
+    border-radius: 12px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-button {
+    margin-top: 40px;
+    padding-top: 4px;
+    font-size: 18px; 
+    background-color: darksalmon;
+    color: white; 
+    border: 0; 
+    border-radius: 12px;
+    font-size: 40px;
+    cursor: pointer;
+    
+
+}
+
+
+.login-button {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.login-button:before {
+    content: '';
+    background: linear-gradient(45deg, #ce6464, #ff7300, #fffb00, #538a3d, #00dbb7, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    
+}
+
+.login-button:active {
+    color: #000;
+    
+}
+
+.login-button:active:after {
+    background: transparent;
+}
+
+.login-button:hover:before {
+    opacity: 1;
+}
+
+.login-button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: salmon;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Face Recognition</h1>
+      <img id="videoElement" src="{{ url_for('video_feed') }}" />
+      <a href="afterLog.html" rel="noopener noreferrer">
+        <button class="login-button" id="submit">Login</button>
+      </a>
+      
+      </button>
+    </div>
+    <script></script>
+  </body>
+</html>
